@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>PITA PANIC | Cravings Under Pressure</title>
-
-    <link rel="icon" href="favicon.ico" sizes="48x48">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <meta name="theme-color" content="#DC3E18">
-
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -20,6 +17,9 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    screens: {
+                        'xs': '400px',
+                    },
                     colors: {
                         panicOrange: '#DC3E18',
                         mildPanic: '#E05828',
@@ -28,11 +28,8 @@
                         blackChar: '#111110',
                     },
                     fontFamily: {
-                        // Body font - legibility first
                         sans: ['Poppins', 'sans-serif'],
-                        // Headings & display layouts mapped to your local Folkies Sans font with fallsbacks
                         display: ['FolkiesVantageSans', 'Lilita One', 'Impact', 'Arial Black', 'sans-serif'],
-                        // Handwritten callouts and accents mapped to your local Folkies Script with fallsbacks
                         script: ['FolkiesVantageScript', 'Satisfy', 'Brush Script MT', 'cursive'],
                         folkiesSans: ['FolkiesVantageSans', 'Lilita One', 'Impact', 'Arial Black', 'sans-serif'],
                         folkiesScript: ['FolkiesVantageScript', 'Satisfy', 'Brush Script MT', 'cursive'],
@@ -64,70 +61,75 @@
     </script>
 
     <style>
-        /* Mapped directly to the exact file structures from your VS Code workspace setup */
         @font-face {
-    font-family: 'FolkiesVantageSans';
-    src: url('./assets/Font Files/FolkiesVantageSans/Web-PS/Folkies Vantage Sans.woff2') format('woff2'),
-         url('./assets/Font Files/FolkiesVantageSans/OpenType-TT/Folkies Vantage Sans.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+            font-family: 'FolkiesVantageSans';
+            src: url('./assets/Font Files/FolkiesVantageSans/Web-PS/Folkies Vantage Sans.woff2') format('woff2'),
+                 url('./assets/Font Files/FolkiesVantageSans/OpenType-TT/Folkies Vantage Sans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'FolkiesVantageScript';
-    src: url('./assets/Font Files/FolkiesVantageScript/Web-PS/Folkies Vantage Script.woff2') format('woff2'),
-         url('./assets/Font Files/FolkiesVantageScript/OpenType-TT/Folkies Vantage Script.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'FolkiesVantageScript';
+            src: url('./assets/Font Files/FolkiesVantageScript/Web-PS/Folkies Vantage Script.woff2') format('woff2'),
+                 url('./assets/Font Files/FolkiesVantageScript/OpenType-TT/Folkies Vantage Script.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Font Files/Poppins/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Font Files/Poppins/Poppins-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Font Files/Poppins/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Font Files/Poppins/Poppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('./assets/Font Files/Poppins/Poppins-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             background-color: #EFEAE4;
             color: #111110;
-            overflow-x: hidden;
         }
+
+        img { max-width: 100%; height: auto; }
 
         .pita-pattern-bg {
             background: linear-gradient(180deg, #EFEAE4 0%, #F6F2ED 100%);
@@ -138,20 +140,28 @@
         }
 
         .retro-shadow {
-            box-shadow: 6px 6px 0px 0px #111110;
+            box-shadow: 4px 4px 0px 0px #111110;
             transition: all 0.2s ease-in-out;
         }
         .retro-shadow:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px 0px #111110;
+            box-shadow: 6px 6px 0px 0px #111110;
+        }
+        @media (min-width: 640px) {
+            .retro-shadow { box-shadow: 6px 6px 0px 0px #111110; }
+            .retro-shadow:hover { box-shadow: 8px 8px 0px 0px #111110; }
         }
         .retro-shadow-orange {
-            box-shadow: 6px 6px 0px 0px #DC3E18;
+            box-shadow: 4px 4px 0px 0px #DC3E18;
             transition: all 0.2s ease-in-out;
         }
         .retro-shadow-orange:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px 0px #DC3E18;
+            box-shadow: 6px 6px 0px 0px #DC3E18;
+        }
+        @media (min-width: 640px) {
+            .retro-shadow-orange { box-shadow: 6px 6px 0px 0px #DC3E18; }
+            .retro-shadow-orange:hover { box-shadow: 8px 8px 0px 0px #DC3E18; }
         }
 
         :root {
@@ -172,57 +182,44 @@
             animation: dynamic-shake 0.25s infinite;
             filter: saturate(var(--panic-saturation));
             display: inline-block;
+            max-width: 100%;
         }
 
-        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #111110; }
-        ::-webkit-scrollbar-thumb { background: #DC3E18; border: 3px solid #111110; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb { background: #DC3E18; border: 2px solid #111110; border-radius: 6px; }
         ::-webkit-scrollbar-thumb:hover { background: #E05828; }
 
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #111110;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #DC3E18;
-            border: 3px solid #111110;
-            border-radius: 6px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #E05828;
+
+        input[type="range"] {
+            touch-action: pan-y;
         }
         
-        /* Hide number input spinners */
-        input[type="number"]::-webkit-inner-spin-button, 
-        input[type="number"]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
-        }
-        /* Dark Animated Watermark Background for Menu Section */
         .dark-animated-pita-bg {
-            background-color: #111110; /* Keeps the deep menu background color */
-            
-            /* FIX 1: Wrapped path in url() */
-            /* FIX 2: Changed file extension from .xml to .svg */
-            background-image: url("./assets/animations/pita_panic_background_pattern.svg");
-            
-            background-size: 200px 138px;
-            animation: menu-diagonal-slide 20s linear infinite;
+            background-color: #111110;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Ctext x='10' y='60' font-family='Impact,Arial Black,sans-serif' font-size='38' font-weight='900' fill='%23ffffff' opacity='0.06' letter-spacing='2' transform='rotate(-12,210,80)'%3EPITA%3C/text%3E%3Ctext x='180' y='110' font-family='Impact,Arial Black,sans-serif' font-size='38' font-weight='900' fill='%23ffffff' opacity='0.06' letter-spacing='2' transform='rotate(-12,210,80)'%3EPANIC%3C/text%3E%3C/svg%3E");
+            background-size: 280px 107px;
+            animation: menu-diagonal-slide 22s linear infinite;
+        }
+        @media (min-width: 640px) {
+            .dark-animated-pita-bg { background-size: 420px 160px; }
         }
 
-        /* 30-Degree Diagonal Loop Keyframes */
         @keyframes menu-diagonal-slide {
-            0% {
-                background-position: 0px 0px;
-            }
-            100% {
-                background-position: -240px -138px;
-            }
+            0% { background-position: 0px 0px; }
+            100% { background-position: -420px -160px; }
+        }
+
+        /* Mobile menu panel base state (JS toggles 'hidden'/'flex') */
+        #mobile-menu-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        #mobile-menu-panel.open {
+            max-height: 400px;
         }
     </style>
 </head>
@@ -232,17 +229,17 @@
     <div id="header-wrapper" class="sticky top-0 z-50 w-full flex flex-col shadow-xl transition-transform duration-300 transform translate-y-0">
         
         <nav class="bg-blackChar text-freshPita border-b-4 border-panicOrange relative z-20">
-            <div class="max-w-7xl mx-auto flex items-center justify-between h-24 px-4 sm:px-8">
+            <div class="max-w-7xl mx-auto flex items-center justify-between h-16 sm:h-20 lg:h-24 px-3 sm:px-6 lg:px-8">
                 
-                <a href="#" class="flex items-center gap-3 group h-full py-3">
+                <a href="#" class="flex items-center gap-3 group h-full py-2 sm:py-3 min-w-0">
                     <div class="h-full hidden sm:block">
-                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain filter brightness-110" style="height: 68px;" />
+                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain filter brightness-110" style="height: 68px; max-width: none;" />
                     </div>
-                    <span class="block sm:hidden font-display text-2xl tracking-tight text-freshPita group-hover:text-panicOrange transition-colors uppercase">PITA PANIC</span>
+                    <span class="block sm:hidden font-display text-xl tracking-tight text-freshPita group-hover:text-panicOrange transition-colors uppercase truncate">PITA PANIC</span>
                 </a>
 
-                <div class="hidden lg:flex items-center gap-10 font-bold uppercase tracking-wider">
-                    <a href="#menu" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Menu</a>
+                <div class="hidden lg:flex items-center gap-6 xl:gap-10 font-bold uppercase tracking-wider">
+                    <a href="Menu.html" target="_blank" rel="noopener" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Menu</a>
                     <a href="#generator" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Roulette</a>
                     <a href="#catering" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Catering</a>
                     
@@ -250,27 +247,39 @@
                         Contact Us
                     </a>
                 </div>
+
+                <!-- Mobile hamburger button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-panel"
+                        class="lg:hidden flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 border-2 border-freshPita text-freshPita hover:text-panicOrange hover:border-panicOrange transition-colors shrink-0">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg sm:text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Panel -->
+            <div id="mobile-menu-panel" class="lg:hidden flex flex-col bg-blackChar border-t-0 border-panicOrange">
+                <a href="Menu.html" target="_blank" rel="noopener" class="block px-6 py-4 border-b border-freshPita/20 border-t-4 border-t-panicOrange font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Menu</a>
+                <a href="#generator" onclick="closeMobileMenu()" class="block px-6 py-4 border-b border-freshPita/20 font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Roulette</a>
+                <a href="#catering" onclick="closeMobileMenu()" class="block px-6 py-4 border-b border-freshPita/20 font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Catering</a>
+                <a href="#franchise" onclick="closeMobileMenu()" class="block px-6 py-4 font-display text-lg uppercase bg-panicOrange text-white hover:bg-white hover:text-blackChar transition-colors text-center">Contact Us</a>
             </div>
         </nav>
 
         <!-- Panic Controller Bar -->
-        <div class="bg-toastedPita border-b-4 border-blackChar py-2 px-4 relative z-10">
+        <div class="bg-toastedPita border-b-4 border-blackChar py-2 px-3 sm:px-4 relative z-10">
             <div class="max-w-md mx-auto flex flex-col items-center justify-center gap-1 text-center font-display">
-                <!-- Choose your craving label + Slider right after it -->
-                <div class="flex items-center justify-center gap-3 w-full">
+                <div class="flex items-center justify-center gap-2 sm:gap-3 w-full flex-nowrap">
                     <div class="flex items-center gap-1.5 shrink-0">
-                        <span class="bg-blackChar text-white p-1 rounded-full text-[10px] sm:text-xs animate-pulse"><i class="fa-solid fa-bolt"></i></span>
-                        <p class="font-display text-xs sm:text-sm uppercase tracking-wider text-blackChar whitespace-nowrap">
-    Choose your craving:
-</p>
+                        <span class="bg-blackChar text-white p-1 rounded-full text-[9px] sm:text-xs animate-pulse"><i class="fa-solid fa-bolt"></i></span>
+                        <p class="font-display text-[10px] xs:text-xs sm:text-sm uppercase tracking-wider text-blackChar whitespace-nowrap">
+                            Choose your craving:
+                        </p>
                     </div>
-                    <div class="flex-grow flex items-center gap-2 max-w-[180px] sm:max-w-[220px]">
-                        <input id="panic-controller" type="range" min="0" max="100" value="0" oninput="updatePanicLevel(this.value)"
+                    <div class="flex-grow flex items-center gap-2 max-w-[120px] xs:max-w-[160px] sm:max-w-[220px] min-w-[70px]">
+                        <input id="panic-controller" type="range" min="0" max="100" value="5" oninput="updatePanicLevel(this.value)"
                                class="w-full h-2 bg-blackChar rounded-lg appearance-none cursor-pointer accent-panicOrange border-2 border-blackChar">
                     </div>
                 </div>
-                <!-- Dynamic level of panic text under the slider -->
-                <div class="h-10 flex items-center justify-center">
+                <div class="h-9 sm:h-10 flex items-center justify-center px-2">
                     <span id="panic-level-label" class="text-panicOrange uppercase tracking-wide transition-all duration-75 block text-center leading-none">Totally Chill</span>
                 </div>
             </div>
@@ -278,49 +287,39 @@
     </div>
 
     <!-- Hero Section -->
-<header class="relative py-12 lg:py-20 px-4 sm:px-8 max-w-7xl mx-auto overflow-visible">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left relative z-10">
+    <header class="relative py-10 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-visible">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div class="block pb-2">
-                <!-- <div class="inline-flex items-center gap-2 bg-panicOrange text-white font-display uppercase text-sm px-4 py-2 rotate-[-2deg] border-2 border-blackChar retro-shadow unhinged-element">
-                    <i class="fa-solid fa-fire"></i> CRAVINGS UNDER PRESSURE
-                </div> -->
+            <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left relative z-10">
+                <h1 class="font-display tracking-tighter text-blackChar uppercase unhinged-element relative pb-10 sm:pb-8 lg:pb-6 block" style="line-height:1;">
+                    <span class="block" style="font-size:clamp(2.75rem,12vw,8rem); letter-spacing:-0.02em;">BUILT FOR</span>
+                    <span class="block text-panicOrange" style="font-size:clamp(2.75rem,12vw,8rem); letter-spacing:-0.04em; line-height:0.9;">SERIOUS</span>
+                    <span class="block text-panicOrange" style="font-size:clamp(2.75rem,12vw,8rem); letter-spacing:-0.04em; line-height:0.9;">CRAVINGS</span>
+                    
+                    <span class="absolute bottom-[-6px] sm:bottom-[-10px] right-2 sm:right-16 transform rotate-[-6deg] font-script text-blackChar text-2xl sm:text-4xl md:text-5xl drop-shadow-md whitespace-nowrap select-none pointer-events-none">
+                        Crave Responsibly!
+                    </span>
+                </h1>
 
-                <!-- To-do: Removed title, keep until told to keep it removed -->
+                <p class="text-base sm:text-lg lg:text-xl font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed text-blackChar pt-2 sm:pt-4 font-sans">
+                    Modern Street Food With Middle Eastern Soul
+                </p>
 
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-4">
+                    <a href="#menu" class="w-full sm:w-auto bg-blackChar text-freshPita font-display text-xl sm:text-2xl px-8 sm:px-10 py-3.5 sm:py-4 border-4 border-blackChar hover:bg-panicOrange hover:text-white transition-all shadow-[6px_6px_0px_0px_#DC3E18] active:translate-y-1 text-center rotate-1 hover:rotate-0">
+                        EXPLORE THE MENU
+                    </a>
+                </div>
             </div>
-
-            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-display tracking-tighter text-blackChar leading-[1.05] uppercase unhinged-element relative block pb-12 sm:pb-16">
-                Worth the <br>
-                <span class="text-panicOrange"> Panic </span> <br>
-                <!-- Unhinged. -->
-                
-                <span class="absolute bottom-[-10px] right-4 sm:right-16 transform rotate-[-6deg] font-script text-blackChar text-4xl sm:text-5xl drop-shadow-md whitespace-nowrap select-none pointer-events-none">
-                    Handle the crunch!
-                </span>
-            </h1>
-
-            <p class="text-lg sm:text-xl font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed text-blackChar pt-4 font-sans">
-                Honest Middle Eastern street food, stacked with flavor, speed, and serious cravings.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-4">
-                <a href="#menu" class="w-full sm:w-auto bg-blackChar text-freshPita font-display text-2xl px-10 py-4 border-4 border-blackChar hover:bg-panicOrange hover:text-white transition-all shadow-[6px_6px_0px_0px_#DC3E18] active:translate-y-1 text-center rotate-1 hover:rotate-0">
-                    EXPLORE THE MENU
-                </a>
-            </div>
-        </div>
 
             <!-- Right Visual Graphic -->
-            <div class="lg:col-span-5 relative flex justify-center unhinged-element">
-                <div class="relative w-full max-w-md aspect-[4/5]">
+            <div class="lg:col-span-5 relative flex justify-center unhinged-element px-6 sm:px-0">
+                <div class="relative w-full max-w-xs sm:max-w-md aspect-[4/5]">
                     <div class="absolute inset-0 bg-toastedPita border-4 border-blackChar transform rotate-6 shadow-[8px_8px_0px_0px_#DC3E18]"></div>
                     <div class="absolute inset-0 overflow-hidden border-4 border-blackChar bg-white">
-                        <img src="assets/Landing Page/PITA PANIC Social templates-59.png" alt="Pita Panic Shawerma Wrap" class="w-full h-full object-cover contrast-125 saturate-110" />
+                        <img src="assets/Landing Page/landing_image.JPEG" alt="Pita Panic Shawerma Wrap" class="w-full h-full object-cover contrast-125 saturate-110" />
                     </div>
-                    <div class="absolute -top-6 -left-6 bg-freshPita border-4 border-blackChar px-4 py-2 font-display text-xl rotate-[-12deg] shadow-lg animate-float text-blackChar">
+                    <div class="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 bg-freshPita border-4 border-blackChar px-3 py-1.5 sm:px-4 sm:py-2 font-display text-base sm:text-xl rotate-[-12deg] shadow-lg animate-float text-blackChar whitespace-nowrap">
                         🌯 WORTH THE PANIC!
                     </div>
                 </div>
@@ -329,235 +328,73 @@
     </header>
 
     <!-- Marquee Strip -->
-    <div class="w-full py-5 bg-panicOrange border-y-4 border-blackChar overflow-hidden relative shadow-[0_4px_0_0_#111110] z-20">
-        <div class="flex whitespace-nowrap animate-marquee font-display text-3xl sm:text-4xl text-white select-none uppercase tracking-wider">
+    <div class="w-full py-3 sm:py-5 bg-panicOrange border-y-4 border-blackChar overflow-hidden relative shadow-[0_4px_0_0_#111110] z-20">
+        <div class="flex whitespace-nowrap animate-marquee font-display text-xl sm:text-3xl lg:text-4xl text-white select-none uppercase tracking-wider">
             <span>&nbsp;🔥 CRAVINGS DON'T WAIT • 🌯 HANDLE THE CRUNCH • 🌟 STAY CALM AND WIPE THE EVIDENCE • ⚡ SERIOUSLY UNHINGED</span>
             <span>&nbsp;🔥 CRAVINGS DON'T WAIT • 🌯 HANDLE THE CRUNCH • 🌟 STAY CALM AND WIPE THE EVIDENCE • ⚡ SERIOUSLY UNHINGED</span>
         </div>
     </div>
 
     <!-- Menu Showcase Section -->
-<section id="menu" class="py-20 text-freshPita dark-animated-pita-bg border-y-8 border-blackChar scroll-mt-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
-                <!-- <span class="bg-mildPanic text-white text-xs font-display px-4 py-1.5 border-2 border-white rounded-full tracking-widest uppercase">Certified Cravings Control</span> -->
-                <h2 class="text-5xl sm:text-7xl font-display text-panicOrange uppercase tracking-tighter unhinged-element">THE PANIC HERO MENU</h2>
-                <p class="font-script text-3xl text-toastedPita">Stacked, heavily seasoned, ready to destroy hunger.</p>
+    <section id="menu" class="py-14 sm:py-20 text-freshPita dark-animated-pita-bg border-y-8 border-blackChar scroll-mt-32 sm:scroll-mt-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto mb-10 sm:mb-16">
+                <h2 class="text-4xl sm:text-6xl lg:text-7xl font-display text-panicOrange uppercase tracking-tighter unhinged-element">OUR HERO ITEMS</h2>
+                <p class="font-script text-xl sm:text-2xl lg:text-3xl text-toastedPita px-2">Stacked, heavily seasoned, ready to destroy hunger.</p>
 
-                <!-- ── Filter Tabs ── -->
-                <div class="flex flex-wrap items-center justify-center gap-3 pt-6">
-                    <button onclick="filterMenu('all', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-panicOrange text-white transition-all transform hover:-translate-y-1">All Eats</button>
-                    <button onclick="filterMenu('sandwich', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Sandwiches</button>
-                    <button onclick="filterMenu('meal', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Meal Boxes</button>
-                    <button onclick="filterMenu('bowl', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Bowls</button>
-                    <button onclick="filterMenu('hummus', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Hummus</button>
-                    <button onclick="filterMenu('dips', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Dips</button>
-                    <button onclick="filterMenu('chicken', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Chicken</button>
-                    <button onclick="filterMenu('sides', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Sides</button>
-                    <button onclick="filterMenu('drinks', event)" class="tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Drinks & Dessert</button>
-                </div>
+                
+		<!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-4 sm:pt-6">
+                    <button onclick="filterMenu('all', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-panicOrange text-white transition-all transform hover:-translate-y-1">All Eats</button>
+                    <button onclick="filterMenu('hummus', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Hummus & More</button>
+                    <button onclick="filterMenu('falafel', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Falafel</button>
+
+		    <button onclick="filterMenu('halloumi', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Halloumi Hits</button>
+                    <button onclick="filterMenu('shawarma', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Shawarma</button>
+                    <button onclick="filterMenu('bowls', event)" class="tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1">Bowls</button>
+		</div>
             </div>
 
             <!-- Menu Tray Grid -->
-            <div id="menu-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Item 1 Tray -->
-                <div class="menu-item shawerma bg-panicOrange rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-freshPita rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc78a?q=80&w=600&auto=format&fit=crop" alt="Chicken Shawerma" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[12deg] z-10">TOUM INTENSE</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">CHICKEN SHAWERMA WRAP</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€11.50</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Thinly sliced flame-roasted chicken breast marinated in secret cumin & garlic spices, bundled with unhinged amounts of garlic toum.</p>
-                            </div>
-                            <button onclick="addToStack('Chicken Shawerma Wrap', 11.50)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 Tray -->
-                <div class="menu-item shawerma bg-mildPanic rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-white rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1626700051175-6518c4793f4f?q=80&w=600&auto=format&fit=crop" alt="Meat Shawerma" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[-8deg] z-10">TAHINI RAIN</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">MEAT SHAWERMA WRAP</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€12.50</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Tender prime beef strips tossed in proprietary Arabic spices, sumac-crusted onions, and drenched in hot tahini sauce.</p>
-                            </div>
-                            <button onclick="addToStack('Meat Shawerma Wrap', 12.50)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 Tray -->
-                <div class="menu-item sides bg-panicOrange rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-freshPita rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1547058881-aa0edd92aab3?q=80&w=600&auto=format&fit=crop" alt="Hummus Trio" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[10deg] z-10">DIP HEAVEN</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">HUMMUS TRIO BOX</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€9.00</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Three distinct purees: Spicy Pepper, Garlic, and Classic Creamy Hummus served along with puffed toasted pita breads.</p>
-                            </div>
-                            <button onclick="addToStack('Hummus Trio Box', 9.00)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 Tray -->
-                <div class="menu-item bowls bg-mildPanic rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-white rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Chicken Bowl" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[-5deg] z-10">HIGH PROTEIN</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">CHICKEN PANIC BOWL</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€14.00</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Roasted golden chicken sits beautifully on a bed of turmeric yellow rice, crunchy pickles, cherry tomatoes, and loaded with heavy garlic pastes.</p>
-                            </div>
-                            <button onclick="addToStack('Chicken Panic Bowl', 14.00)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 Tray -->
-                <div class="menu-item sides bg-panicOrange rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-freshPita rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1593001874117-1f9db3b46e8e?q=80&w=600&auto=format&fit=crop" alt="Falafel Box" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[8deg] z-10">SERIOUS CRISP</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">FALAFEL PANIC BOX</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€8.50</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Six crispy-fried, bright green herb-infused chickpea patties loaded with coriander, cumin, served alongside cold dipping tahini sauce.</p>
-                            </div>
-                            <button onclick="addToStack('Falafel Panic Box', 8.50)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 6 Tray -->
-                <div class="menu-item sides bg-mildPanic rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2">
-                    <div class="bg-white rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-                        
-                        <!-- Food Plate -->
-                        <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-                            <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=600&auto=format&fit=crop" alt="Loaded Fries" class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white" />
-                            <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white rotate-[-12deg] z-10">LOADED FIX</span>
-                        </div>
-                        
-                        <!-- Food Details -->
-                        <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                            <div>
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                                    <h3 class="text-2xl font-display uppercase leading-none tracking-tight text-blackChar">CAREFUL, IT'S LOADED! FRIES</h3>
-                                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">€10.00</span>
-                                </div>
-                                <p class="text-sm font-medium text-blackChar/80 font-sans">Crispy golden-cut potato fries, heavily seasoned with sumac and house spices, loaded with grilled chicken crumbs and garlic sauce.</p>
-                            </div>
-                            <button onclick="addToStack('Loaded Fries', 10.00)" class="mt-4 w-full bg-blackChar text-freshPita font-display text-lg px-6 py-3 border-2 border-blackChar hover:bg-white hover:text-blackChar transition-colors retro-shadow">
-                                STACK TO CRAVINGS +
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div id="menu-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"></div>
         </div>
     </section>
 
-<!-- Emergency Panic Plate Generator with Shawarma Packaging Background -->
-    <section id="generator" class="relative py-24 bg-toastedPita border-b-8 border-blackChar scroll-mt-40 overflow-hidden">
-        <!-- Background Image overlay set to exactly 50% opacity -->
+    <!-- Emergency Panic Plate Generator with Shawarma Packaging Background -->
+    <section id="generator" class="relative py-16 sm:py-24 bg-toastedPita border-b-8 border-blackChar scroll-mt-32 sm:scroll-mt-40 overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center opacity-50 z-0 pointer-events-none" style="background-image: url('assets/Packaging/Pita_Panic_Packaging_Shawarma.jpg');"></div>
-        <!-- Subtle fallback pattern layer -->
         <div class="absolute inset-0 bg-freshPita opacity-20 pointer-events-none z-0"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-8">
-            <div class="inline-block bg-blackChar text-white border-2 border-blackChar px-5 py-2 font-display text-lg tracking-wide uppercase rotate-[-2deg] retro-shadow unhinged-element">
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
+            <div class="inline-block bg-blackChar text-white border-2 border-blackChar px-4 py-2 sm:px-5 font-display text-sm sm:text-lg tracking-wide uppercase rotate-[-2deg] retro-shadow unhinged-element">
                 <i class="fa-solid fa-triangle-exclamation text-panicOrange mr-2"></i> IN A DECISION PANIC?
             </div>
             
-            <h2 class="text-5xl sm:text-7xl font-display text-blackChar uppercase tracking-tighter">THE CRAVING ROULETTE</h2>
-            <p class="font-sans font-medium text-blackChar max-w-lg mx-auto text-lg sm:text-xl bg-white p-4 border-2 border-blackChar rotate-[1deg] retro-shadow">
+            <h2 class="text-4xl sm:text-6xl lg:text-7xl font-display text-blackChar uppercase tracking-tighter">THE CRAVING ROULETTE</h2>
+            <p class="font-sans font-medium text-blackChar max-w-lg mx-auto text-base sm:text-lg lg:text-xl bg-white p-3 sm:p-4 border-2 border-blackChar rotate-[1deg] retro-shadow">
                 Can't make up your mind? Smash the unhinged emergency button and let the universe serve your hunger fix instantly.
             </p>
 
-            <div class="relative flex flex-col items-center justify-center mt-6 unhinged-element">
-                <div class="relative z-10 w-44 h-44 bg-zinc-400 rounded-full border-4 border-blackChar flex justify-center items-center shadow-[10px_10px_0px_#111110]">
-                    <button onclick="triggerEmergencyFix()" class="group relative w-36 h-36 bg-gradient-to-b from-red-500 via-red-600 to-red-800 hover:from-red-400 hover:to-red-700 rounded-full border-4 border-blackChar shadow-[0px_10px_0px_#991b1b,0px_12px_20px_rgba(0,0,0,0.4)] active:translate-y-[8px] active:shadow-[0px_2px_0px_#7f1d1d,0px_4px_6px_rgba(0,0,0,0.2)] transition-all flex flex-col justify-center items-center select-none cursor-pointer overflow-hidden">
-                        <div class="absolute top-2 left-6 w-20 h-8 bg-white opacity-35 rounded-full filter blur-[1px] rotate-[-15deg]"></div>
-                        <div class="absolute inset-2 rounded-full border border-white opacity-10 pointer-events-none"></div>
-                        <span class="font-display text-white text-3xl tracking-wide uppercase leading-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">PANIC</span>
-                        <span class="font-script text-toastedPita text-lg leading-none rotate-[-6deg] drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] mt-1">Push!</span>
+            <div class="relative flex flex-col items-center justify-center mt-4 sm:mt-6 unhinged-element">
+                <div class="relative z-10 w-36 h-36 sm:w-44 sm:h-44 bg-blackChar rounded-full border-4 border-blackChar flex justify-center items-center shadow-[10px_10px_0px_#111110]">
+                    <button onclick="triggerEmergencyFix()" class="group relative w-28 h-28 sm:w-36 sm:h-36 bg-gradient-to-b from-[#E05828] via-[#DC3E18] to-[#C03010] hover:from-[#E86030] hover:to-[#DC3E18] rounded-full border-4 border-blackChar shadow-[0px_10px_0px_#7a1e05,0px_12px_20px_rgba(0,0,0,0.4)] active:translate-y-[8px] active:shadow-[0px_2px_0px_#5a1503,0px_4px_6px_rgba(0,0,0,0.2)] transition-all flex flex-col justify-center items-center select-none cursor-pointer overflow-hidden">
+                        <div class="absolute top-2 left-6 w-20 h-8 bg-white opacity-25 rounded-full filter blur-[1px] rotate-[-15deg]"></div>
+                        <div class="absolute inset-2 rounded-full border-2 border-blackChar opacity-20 pointer-events-none"></div>
+                        <span class="font-display text-white text-2xl sm:text-3xl tracking-wide uppercase leading-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">PANIC</span>
+                        <span class="font-script text-freshPita text-base sm:text-lg leading-none rotate-[-6deg] drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] mt-1">Push!</span>
                     </button>
                 </div>
-                <div class="absolute w-64 h-64 rounded-full bg-red-600 opacity-20 filter blur-3xl animate-pulse pointer-events-none -z-10"></div>
+                <div class="absolute w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-panicOrange opacity-20 filter blur-3xl animate-pulse pointer-events-none -z-10"></div>
             </div>
 
-            <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-8 rotate-[-2deg]">
-                <div class="absolute -top-4 -right-4 transform rotate-12 bg-panicOrange text-white text-sm font-display px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
-                <div class="space-y-4">
-                    <h3 id="result-title" class="text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
-                    <p id="result-desc" class="text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
-                    <div class="flex items-center justify-between pt-6 border-t-4 border-blackChar">
-                        <span id="result-price" class="text-3xl font-display text-panicOrange">€11.50</span>
-                        <a href="#menu" class="bg-blackChar text-white px-6 py-3 font-display border-2 border-blackChar hover:bg-panicOrange transition-colors flex items-center gap-2">
+            <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-5 sm:p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-6 sm:mt-8 rotate-[-2deg]">
+                <div class="absolute -top-4 -right-2 sm:-right-4 transform rotate-12 bg-panicOrange text-white text-xs sm:text-sm font-display px-3 sm:px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
+                <div class="space-y-3 sm:space-y-4">
+                    <h3 id="result-title" class="text-2xl sm:text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
+                    <p id="result-desc" class="text-sm sm:text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
+                    <div class="flex items-center justify-between pt-4 sm:pt-6 border-t-4 border-blackChar gap-3">
+                        <span id="result-price" class="text-2xl sm:text-3xl font-display text-panicOrange">€11.50</span>
+                        <a href="#menu" class="bg-blackChar text-white px-4 sm:px-6 py-2.5 sm:py-3 font-display border-2 border-blackChar hover:bg-panicOrange transition-colors flex items-center gap-2 text-sm sm:text-base whitespace-nowrap">
                             <span>VIEW MENU</span>
                             <i class="fa-solid fa-arrow-right text-freshPita"></i>
                         </a>
@@ -568,83 +405,83 @@
     </section>
 
     <!-- Franchise & Contact Section -->
-    <section id="franchise" class="py-24 bg-blackChar dark-animated-pita-bg border-b-8 border-blackChar scroll-mt-40">
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <div class="bg-panicOrange border-4 border-white p-8 sm:p-12 shadow-[8px_8px_0px_0px_#EFEAE4] transform rotate-[1deg] relative">
-                <div class="absolute -top-5 right-4 sm:right-10 bg-white text-blackChar px-4 py-2 border-4 border-blackChar font-display text-sm uppercase rotate-[-3deg]">
+    <section id="franchise" class="py-16 sm:py-24 bg-blackChar dark-animated-pita-bg border-b-8 border-blackChar scroll-mt-32 sm:scroll-mt-40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="bg-panicOrange border-4 border-white p-6 sm:p-8 lg:p-12 shadow-[8px_8px_0px_0px_#EFEAE4] transform rotate-[1deg] relative">
+                <div class="absolute -top-5 right-2 sm:right-4 lg:right-10 bg-white text-blackChar px-3 sm:px-4 py-2 border-4 border-blackChar font-display text-xs sm:text-sm uppercase rotate-[-3deg]">
                     <i class="fa-solid fa-bullhorn text-panicOrange mr-2"></i> Global Domination
                 </div>
 
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8 mt-4">
-                    <div class="md:w-2/3 text-center md:text-left space-y-4">
-                        <h2 class="text-5xl sm:text-6xl font-display text-white uppercase tracking-tighter leading-[1.1] unhinged-element">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 mt-6 sm:mt-4">
+                    <div class="md:w-2/3 text-center md:text-left space-y-3 sm:space-y-4">
+                        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display text-white uppercase tracking-tighter leading-[1.1] unhinged-element">
                             WANT TO SPREAD <br>
                             <span class="text-blackChar bg-white px-2 mt-1 inline-block rotate-[-1deg]">THE PANIC?</span>
                         </h2>
-                        <p class="font-sans font-medium text-white text-lg sm:text-xl max-w-lg mt-4">
+                        <p class="font-sans font-medium text-white text-base sm:text-lg lg:text-xl max-w-lg mt-3 sm:mt-4">
                             Wanna join the Pita Panic family? If your city is ready for unapologetic flavors, severe garlic, and high-speed chaos, let's talk.
                         </p>
                     </div>
 
-                    <div class="md:w-1/3 flex justify-center w-full mt-4 md:mt-0">
-                        <a href="mailto:franchise@pitapanic.be" class="w-full sm:w-auto bg-blackChar text-white font-display text-2xl px-8 py-5 border-4 border-white hover:bg-white hover:text-blackChar hover:border-blackChar transition-all shadow-[6px_6px_0px_0px_#111110] hover:shadow-[8px_8px_0px_0px_#DC3E18] active:translate-y-1 text-center rotate-[-2deg] hover:rotate-0 flex flex-col items-center">
+                    <div class="md:w-1/3 flex justify-center w-full mt-2 md:mt-0">
+                        <a href="mailto:info@pita-panic.com" class="w-full sm:w-auto bg-blackChar text-white font-display text-lg sm:text-2xl px-6 sm:px-8 py-4 sm:py-5 border-4 border-white hover:bg-white hover:text-blackChar hover:border-blackChar transition-all shadow-[6px_6px_0px_0px_#111110] hover:shadow-[8px_8px_0px_0px_#DC3E18] active:translate-y-1 text-center rotate-[-2deg] hover:rotate-0 flex flex-col items-center">
                             <span>JOIN THE FAMILY</span>
-                            <span class="text-xs font-sans tracking-widest opacity-90 mt-1 uppercase">Start the Inquiry</span>
+                            <span class="text-[10px] sm:text-xs font-sans tracking-widest opacity-90 mt-1 uppercase">Start the Inquiry</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Catering Calculator Section -->
-    <section id="catering" class="py-24 bg-freshPita border-b-8 border-blackChar scroll-mt-40 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/BackGrounds/packaging.png');">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="bg-white border-4 border-blackChar p-8 sm:p-12 retro-shadow relative">
-                <div class="absolute -top-6 left-8 bg-panicOrange text-white px-6 py-2 border-4 border-blackChar font-display text-xl uppercase rotate-[-3deg]">
+    <!-- Catering Calculator Section (Sandwich-Based Shawerma Storm) -->
+    <section id="catering" class="py-16 sm:py-24 bg-freshPita border-b-8 border-blackChar scroll-mt-32 sm:scroll-mt-40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="bg-white border-4 border-blackChar p-5 sm:p-8 lg:p-12 retro-shadow relative">
+                <div class="absolute -top-5 sm:-top-6 left-4 sm:left-8 bg-panicOrange text-white px-4 sm:px-6 py-1.5 sm:py-2 border-4 border-blackChar font-display text-sm sm:text-xl uppercase rotate-[-3deg]">
                     SARA'S PANIC PARTY CALCULATOR
                 </div>
 
-                <div class="text-center sm:text-left space-y-4 mb-10 mt-4 border-b-4 border-blackChar pb-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="text-center sm:text-left space-y-4 mb-8 sm:mb-10 mt-8 sm:mt-4 border-b-4 border-blackChar pb-6 sm:pb-8 flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div>
-                        <h3 class="text-4xl sm:text-5xl font-display text-blackChar uppercase leading-tight">PLANNING A SHAWERMA STORM?</h3>
-                        <p class="font-sans text-lg font-medium text-blackChar mt-2">Use this tool to calculate food proportions for your workplace crisis or private party.</p>
+                        <h3 class="text-2xl sm:text-4xl lg:text-5xl font-display text-blackChar uppercase leading-tight">PLANNING A SHAWERMA STORM?</h3>
+                        <p class="font-sans text-base sm:text-lg font-medium text-blackChar mt-2">Use this tool to calculate your crowd's ultimate custom sandwich heap for your workplace crisis or private party.</p>
                     </div>
-                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blackChar flex-shrink-0 retro-shadow">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400&auto=format&fit=crop" alt="Sara Benali - Catering" class="w-full h-full object-cover">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-blackChar flex-shrink-0 retro-shadow">
+                        <img src="assets/Landing Page/shawerma-storm.jpeg" alt="Sara Benali - Catering" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-toastedPita border-4 border-blackChar p-6 sm:p-8 space-y-8 text-center" style="animation: dynamic-shake 0.25s infinite; filter: saturate(var(--panic-saturation));">
-                    <h4 class="font-display text-3xl text-blackChar uppercase">
-                        How many hungry mouths? <span id="crowd-count" class="text-panicOrange text-4xl sm:text-5xl ml-2 block sm:inline mt-2 sm:mt-0 bg-white border-2 border-blackChar px-4 py-1 rotate-[2deg] inline-block">10 PEOPLE</span>
+                <div class="bg-toastedPita border-4 border-blackChar p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 text-center" style="animation: dynamic-shake 0.25s infinite; filter: saturate(var(--panic-saturation));">
+                    <h4 class="font-display text-xl sm:text-3xl text-blackChar uppercase leading-snug">
+                        How many hungry mouths? <span id="crowd-count" class="text-panicOrange text-2xl sm:text-4xl lg:text-5xl ml-0 sm:ml-2 block sm:inline mt-2 sm:mt-0 bg-white border-2 border-blackChar px-3 sm:px-4 py-1 rotate-[2deg] inline-block">10 PEOPLE</span>
                     </h4>
                     
-                    <div class="max-w-2xl mx-auto px-4">
+                    <div class="max-w-2xl mx-auto px-2 sm:px-4">
                         <input type="range" id="crowd-slider" min="5" max="25" value="10" oninput="calculateCatering(this.value)" class="w-full accent-panicOrange cursor-pointer h-4 rounded-full bg-blackChar border-2 border-white">
-                        <div class="flex justify-between text-xs font-bold font-display mt-2">
+                        <div class="flex justify-between text-[10px] sm:text-xs font-bold font-display mt-2">
                             <span>5 (Small Crew)</span>
                             <span>25 (Total Chaos)</span>
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-left">
-                        <div class="p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
-                            <span class="text-sm font-bold text-blackChar uppercase font-display">Roasted Chicken</span>
-                            <div id="cat-chicken" class="font-display text-3xl text-panicOrange mt-1">5.0 kg</div>
+                    <!-- Dynamic Sandwich Outputs (Removed kg weights, updated to pcs wrappers) -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 text-left">
+                        <div class="p-3 sm:p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
+                            <span class="text-xs sm:text-sm font-bold text-blackChar uppercase font-display">Chicken Sandwiches</span>
+                            <div id="cat-chicken" class="font-display text-xl sm:text-3xl text-panicOrange mt-1">6 pcs</div>
                         </div>
-                        <div class="p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
-                            <span class="text-sm font-bold text-blackChar uppercase font-display">Sumac Beef</span>
-                            <div id="cat-beef" class="font-display text-3xl text-panicOrange mt-1">3.8 kg</div>
+                        <div class="p-3 sm:p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
+                            <span class="text-xs sm:text-sm font-bold text-blackChar uppercase font-display">Beef Sandwiches</span>
+                            <div id="cat-beef" class="font-display text-xl sm:text-3xl text-panicOrange mt-1">5 pcs</div>
                         </div>
-                        <div class="p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
-                            <span class="text-sm font-bold text-blackChar uppercase font-display">Falafel Patties</span>
-                            <div id="cat-falafel" class="font-display text-3xl text-panicOrange mt-1">75 pcs</div>
+                        <div class="p-3 sm:p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
+                            <span class="text-xs sm:text-sm font-bold text-blackChar uppercase font-display">Falafel Sandwiches</span>
+                            <div id="cat-falafel" class="font-display text-xl sm:text-3xl text-panicOrange mt-1">4 pcs</div>
                         </div>
-                        <div class="p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
-                            <span class="text-sm font-bold text-blackChar uppercase font-display">Toasted Pitas</span>
-                            <div id="cat-pita" class="font-display text-3xl text-panicOrange mt-1">30 packs</div>
+                        <div class="p-3 sm:p-4 bg-white border-4 border-blackChar retro-shadow-orange hover:-translate-y-1 transition-transform">
+                            <span class="text-xs sm:text-sm font-bold text-blackChar uppercase font-display">Total Wraps</span>
+                            <div id="cat-pita" class="font-display text-xl sm:text-3xl text-panicOrange mt-1">15 pcs</div>
                         </div>
                     </div>
                 </div>
@@ -653,471 +490,313 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blackChar text-freshPita pt-20 pb-10 border-t-8 border-panicOrange">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 border-b-4 border-freshPita border-opacity-20 pb-12">
+    <footer class="bg-blackChar text-freshPita pt-14 sm:pt-20 pb-8 sm:pb-10 border-t-8 border-panicOrange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-12 border-b-4 border-freshPita border-opacity-20 pb-10 sm:pb-12">
             
-            <!-- Brand Info (Client Assets Restored) -->
-            <div class="md:col-span-5 space-y-6">
+            <div class="md:col-span-5 space-y-5 sm:space-y-6">
                 <div class="flex items-center gap-4">
-                    <!-- Footnote Stylized P Emblem (Pita_Panic_P_Orange.jpg) -->
-                    <div class="w-14 h-14 overflow-hidden border-4 border-panicOrange rounded-xl rotate-[-6deg] transition-transform duration-200 hover:rotate-0 shrink-0">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 overflow-hidden border-4 border-panicOrange rounded-xl rotate-[-6deg] transition-transform duration-200 hover:rotate-0 shrink-0">
                         <img src="assets/Logos/Pita_Panic_P_Orange.jpg" alt="Pita Panic Emblem" class="w-full h-full object-cover">
                     </div>
-                    <!-- Footnote Stacked Text Logo (Pita_Panic_Logo_White_On_Black.jpg) -->
-                    <div class="h-14">
-                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain">
+                    <div class="h-12 sm:h-14">
+                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain" style="max-width: none;">
                     </div>
                 </div>
-                <p class="text-base font-medium opacity-80 leading-relaxed max-w-sm font-sans">
+                <p class="text-sm sm:text-base font-medium opacity-80 leading-relaxed max-w-sm font-sans">
                     Drippy shawerma & fries done properly. Highly interactive, seriously stacked, and unapologetically bold Middle Eastern food brand based in Ghent.
                 </p>
                 <div class="flex items-center gap-4">
-                    <a href="#" class="w-12 h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
+                    <a href="https://www.instagram.com/pita.panic?igsh=MTlvYm4zZXJxamt4cQ==" target="_blank" rel="noopener" class="w-11 h-11 sm:w-12 sm:h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-lg sm:text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
-                        <i class="fa-brands fa-tiktok"></i>
+                    <a href="https://maps.app.goo.gl/DdvXLUEoA3vmA32i7?g_st=aw" target="_blank" rel="noopener" class="w-11 h-11 sm:w-12 sm:h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-lg sm:text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
+                        <i class="fa-solid fa-location-dot"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="md:col-span-3 space-y-6">
-                <h4 class="font-display text-panicOrange text-2xl uppercase tracking-wider">CRAVING HOURS</h4>
-                <ul class="text-base space-y-3 font-medium font-sans">
-                    <li class="flex justify-between border-b border-gray-700 pb-2"><span>Mon - Thu</span> <span>11:00 - 00:00</span></li>
-                    <li class="flex justify-between border-b border-gray-700 pb-2 text-panicOrange font-bold"><span>Fri - Sat</span> <span>11:00 - 03:00</span></li>
-                    <li class="flex justify-between pb-2"><span>Sunday</span> <span>11:00 - 00:00</span></li>
+            <div class="md:col-span-3 space-y-5 sm:space-y-6">
+                <h4 class="font-display text-panicOrange text-xl sm:text-2xl uppercase tracking-wider">CRAVING HOURS</h4>
+                <ul class="text-sm sm:text-base space-y-3 font-medium font-sans">
+                    <li class="flex justify-between pb-2 gap-3"><span>Every Day</span> <span class="text-panicOrange font-bold whitespace-nowrap">11:00 – 22:00</span></li>
                 </ul>
             </div>
 
-            <div class="md:col-span-4 space-y-6">
-                <h4 class="font-display text-panicOrange text-2xl uppercase tracking-wider">PANIC CENTER</h4>
-                <div class="space-y-4 font-medium font-sans">
-                    <p class="flex items-start gap-3 bg-white bg-opacity-10 p-4 border-2 border-transparent hover:border-panicOrange transition-colors">
-                        <i class="fa-solid fa-location-dot text-panicOrange text-xl mt-1"></i>
-                        <span>Marktstraβe,<br>70372, Stuttgart Bad-Cannstatt, Germany</span>
+            <div class="md:col-span-4 space-y-5 sm:space-y-6">
+                <h4 class="font-display text-panicOrange text-xl sm:text-2xl uppercase tracking-wider">PANIC CENTER</h4>
+                <div class="space-y-3 sm:space-y-4 font-medium font-sans">
+                    <p class="flex items-start gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-location-dot text-panicOrange text-lg sm:text-xl mt-1 shrink-0"></i>
+                        <span>Marktstraße,<br>70372, Stuttgart Bad-Cannstatt, Germany</span>
                     </p>
-                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-4 border-2 border-transparent hover:border-panicOrange transition-colors">
-                        <i class="fa-solid fa-envelope text-panicOrange text-xl"></i>
-                        <span>catering@pitapanic.be</span>
+                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-envelope text-panicOrange text-lg sm:text-xl shrink-0"></i>
+                        <span class="break-all">info@pita-panic.com</span>
                     </p>
-                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-4 border-2 border-transparent hover:border-panicOrange transition-colors">
-                        <i class="fa-solid fa-phone text-panicOrange text-xl"></i>
-                        <span>+32 495 28 74 11</span>
+                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-phone text-panicOrange text-lg sm:text-xl shrink-0"></i>
+                        <span>+49 176 62 09 63 13</span>
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-sm font-bold opacity-70 gap-6 font-sans">
-            <p>© 2026 PITA PANIC. ALL RIGHTS RESERVED.</p>
-            <div class="bg-panicOrange text-white px-6 py-2 border-2 border-white font-display text-lg uppercase tracking-wide transform rotate-[2deg] hover:rotate-0 transition-transform">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-bold opacity-70 gap-4 sm:gap-6 font-sans text-center">
+            <p>© 2026 PITA PANIC. ALL RIGHTS RESERVED. <span class="mx-1">|</span> <a href="impressum.html" class="underline underline-offset-4 hover:text-panicOrange transition-colors">IMPRESSUM</a></p>
+            <div class="bg-panicOrange text-white px-4 sm:px-6 py-2 border-2 border-white font-display text-sm sm:text-lg uppercase tracking-wide transform rotate-[2deg] hover:rotate-0 transition-transform">
                 THIS SMELLS LIKE A GOOD DECISION.
             </div>
         </div>
     </footer>
 
-    <!-- Floating Cravings Basket UI -->
-    <div id="cravings-basket" class="fixed bottom-24 right-6 z-50 w-80 sm:w-96 bg-freshPita border-4 border-blackChar retro-shadow-orange hidden transform transition-transform scale-95 opacity-0 origin-bottom-right">
-        <div class="bg-blackChar text-freshPita p-4 flex justify-between items-center border-b-4 border-blackChar">
-            <h3 class="font-display text-xl uppercase tracking-wide">🔥 MY CRAVING STACK</h3>
-            <button onclick="toggleBasket()" class="text-freshPita hover:text-panicOrange text-2xl font-bold leading-none">&times;</button>
-        </div>
-        <div class="p-4 max-h-60 overflow-y-auto space-y-3 bg-white" id="basket-items-container">
-            <!-- Dynamically populated via JS -->
-            <div class="text-center text-gray-500 font-medium py-4 text-sm font-sans" id="empty-basket-msg">
-                Your stack is empty. Go feed the panic.
-            </div>
-        </div>
-        <div class="p-4 bg-toastedPita border-t-4 border-blackChar space-y-4">
-            <div class="flex justify-between items-center font-display text-2xl">
-                <span class="text-blackChar uppercase">TOTAL:</span>
-                <span id="basket-total" class="text-panicOrange">€0.00</span>
-            </div>
-            <div class="flex gap-2 font-display">
-                <button onclick="clearBasket()" class="w-1/3 bg-white border-2 border-blackChar text-blackChar py-2 uppercase hover:bg-blackChar hover:text-white transition-colors text-sm">
-                    Clear
-                </button>
-                <button class="w-2/3 bg-panicOrange border-2 border-blackChar text-white py-2 uppercase hover:bg-blackChar transition-colors text-lg retro-shadow">
-                    Checkout Fast
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
-    // ─────────────────────────────────────────────
-    // MENU DATA
-    // To add a new item: add one object to this array.
-    // cat options: sandwich | meal | bowl | hummus | dips | chicken | sides | drinks
-    // bg options:  panicOrange | mildPanic
-    // inner options: freshPita | white
-    // price: use a number for basket math, or null for "Ask us" / "Seasonal"
-    // ─────────────────────────────────────────────
     const menuItems = [
-      {
-        cat: 'sandwich', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Chicken Shawerma Sandwich', price: 11.50, priceDisplay: '€11.50',
-        badge: 'TOUM INTENSE', badgeRotate: '12deg',
-	img: 'assets/Menu/Food/Sandwiches/Shawerma.png',        
-	imgAlt: 'Chicken Shawerma Sandwich',
-        desc: 'Flame-roasted chicken breast marinated in secret cumin & garlic spices, 	bundled with unhinged amounts of garlic toum.',
-      },
-      {
-        cat: 'sandwich', bg: 'mildPanic', inner: 'white',
-        name: 'Beef Shawerma Sandwich', price: 12.50, priceDisplay: '€12.50',
-        badge: 'TAHINI RAIN', badgeRotate: '-8deg',
-        img: 'assets/Menu/Food/Sandwiches/beef_shawerma.jpeg',
-        imgAlt: 'Beef Shawerma Sandwich',
-        desc: 'Tender prime beef strips tossed in proprietary Arabic spices, sumac-crusted onions, drenched in hot tahini sauce.',
-      },
-      {
-        cat: 'sandwich', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Falafel Sandwich', price: 8.50, priceDisplay: '€8.50',
-        badge: 'SERIOUS CRISP', badgeRotate: '8deg',
-        img: 'assets/Menu/Food/Sandwiches/Falafel.png',
-        imgAlt: 'Falafel Sandwich',
-        desc: 'Crispy herb-infused chickpea patties with coriander and cumin, cold dipping tahini on the side.',
-      },
-      {
-        cat: 'meal', bg: 'mildPanic', inner: 'white',
-        name: 'Shawerma Arabi Meal Box', price: null, priceDisplay: 'Ask us',
-        badge: 'FULL PLATE', badgeRotate: '-5deg',
-        img: 'assets/Menu/Food/Meal_Box/Arabi_meal.png',
-        imgAlt: 'Shawerma Arabi Meal Box',
-        desc: 'Full Shawerma Arabi plate — fresh salad, house dip, pickles & golden fries. The whole storm in one box.',
-      },
-      {
-        cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Vegan Bowl', price: 12.00, priceDisplay: '€12.00',
-        badge: 'PLANT POWER', badgeRotate: '10deg',
-        img: 'assets/Menu/Food/Bowls/Vegan.jpeg',
-        imgAlt: 'Vegan Bowl',
-        desc: 'Plant-powered bowl with seasoned grains, roasted vegetables, and creamy hummus. No panic, all flavor.',
-      },
-      {
-        cat: 'bowl', bg: 'mildPanic', inner: 'white',
-        name: 'Shawerma Bowl', price: 14.00, priceDisplay: '€14.00',
-        badge: 'HIGH PROTEIN', badgeRotate: '-5deg',
-	img: 'assets/Menu/Food/Bowls/Shawerma_Bowl.png', 
-        imgAlt: 'Shawerma Bowl',
-        desc: 'Roasted chicken on turmeric rice, crunchy pickles, cherry tomatoes & heavy garlic paste.',
-      },
-      {
-        cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Fried Chicken Bowl', price: 13.50, priceDisplay: '€13.50',
-        badge: 'CRUNCH LOADED', badgeRotate: '8deg',
-        img: 'assets/Menu/Food/Bowls/Fried_Chicken.jpeg',
-        imgAlt: 'Fried Chicken Bowl',
-        desc: 'Crunchy fried chicken strips over spiced rice with garlic sauce and fresh toppings.',
-      },
-      {
-        cat: 'bowl', bg: 'mildPanic', inner: 'white',
-        name: 'Fattet Hummus', price: 11.00, priceDisplay: '€11.00',
-        badge: 'LEVANT CLASSIC', badgeRotate: '-10deg',
-        img: 'assets/Menu/Food/Bowls/Fattet_Hummus.jpeg',
-        imgAlt: 'Fattet Hummus',
-        desc: 'Crispy toasted pita, creamy hummus, warm chickpeas, tahini sauce & toasted pine nuts.',
-      },
-      {
-        cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Fattet Jaj', price: 13.00, priceDisplay: '€13.00',
-        badge: 'SLOW COOKED', badgeRotate: '6deg',
-        img: 'assets/Menu/Food/Bowls/Fattet_jaj.jpeg',
-        imgAlt: 'Fattet Jaj',
-        desc: 'Slow-cooked chicken fatteh layered with toasted pita, yogurt, tahini & almonds.',
-      },
-      {
-        cat: 'hummus', bg: 'mildPanic', inner: 'white',
-        name: 'Single Hummus Tub (250g)', price: 5.50, priceDisplay: '€5.50',
-        badge: 'OG CLASSIC', badgeRotate: '-8deg',
-        img: 'assets/Menu/Food/Hummus/Original_Hummus.png',
-        imgAlt: 'Single Hummus Tub',
-        desc: 'Our signature creamy original hummus — 250g, cold and ready to devour or take home.',
-      },
-      {
-        cat: 'hummus', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Hummus Trio Tray', price: 9.00, priceDisplay: '€9.00',
-        badge: 'DIP HEAVEN', badgeRotate: '10deg',
-        img: 'assets/Menu/Food/Hummus/trio_hummus.jpeg',
-        imgAlt: 'Hummus Trio Tray',
-        desc: 'Three bold hummus flavors — Beetroot, Basil & Spicy — served with toasted pita breads.',
-      },
-      {
-        cat: 'dips', bg: 'mildPanic', inner: 'white',
-        name: 'Dip Selection', price: 2.00, priceDisplay: '€2.00',
-        badge: 'SAUCE BOSS', badgeRotate: '-6deg',
-        img: 'assets/Menu/Food/Dips/dips.jpeg',
-        imgAlt: 'Dip Selection',
-        desc: 'In-house garlic sauce, chili sauce, or tahini. Each one made with zero apology.',
-      },
-      {
-        cat: 'chicken', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Chicken Tenders Box', price: 7.50, priceDisplay: 'From €7.50',
-        badge: 'GOLDEN CRISP', badgeRotate: '10deg',
-        img: 'assets/Menu/Food/Chicken/chicken_tenders.jpg',
-        imgAlt: 'Chicken Tenders Box',
-	objPos: '30% center',
-        desc: 'Perfectly seasoned crispy golden chicken tenders. Choose your fix: 4, 6, or 8 pieces.',
-      },
-      {
-        cat: 'chicken', bg: 'mildPanic', inner: 'white',
-        name: 'Chicken Burger Box', price: 11.00, priceDisplay: '€11.00',
-        badge: 'FULLY LOADED', badgeRotate: '-8deg',
-        img: 'assets/Menu/Food/Chicken/chicken_burger.png',
-        imgAlt: 'Chicken Burger Box',
-        desc: 'A fully loaded fried chicken burger with house sauce, fresh toppings, and extreme attitude.',
-      },
-      {
-        cat: 'sides', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Fries', price: 4.00, priceDisplay: '€4.00',
-        badge: 'LOADED FIX', badgeRotate: '-12deg',
-        img: 'assets/Menu/Food/Sides/fries.jpeg',
-        imgAlt: 'Fries',
-        desc: 'Sumac-seasoned golden fries available as a crispy side or loaded inside your combo.',
-      },
-      {
-        cat: 'drinks', bg: 'mildPanic', inner: 'white',
-        name: 'Fresh Juices', price: null, priceDisplay: 'Seasonal',
-        badge: 'COLD & FRESH', badgeRotate: '8deg',
-        img: 'assets/Menu/Food/Juice/juice.jpeg',
-        imgAlt: 'Fresh Juices',
-        desc: 'Cold-pressed seasonal fruit juices. Tame the heat after all that garlic.',
-      },
-      {
-        cat: 'drinks', bg: 'panicOrange', inner: 'freshPita',
-        name: 'Dessert', price: null, priceDisplay: 'Ask us',
-        badge: 'SWEET ENDING', badgeRotate: '-6deg',
-        img: 'assets/Menu/Food/Dessert/dessert.jpeg',
-        imgAlt: 'Dessert',
-        desc: 'Sweet endings — ask us what\'s in the case today. Worth the wait.',
-      },
+        {
+            cat: 'hummus', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Hummus', price: 5.00, priceDisplay: '€5.00',
+            badge: 'OG CLASSIC', badgeRotate: '-8deg',
+            img: 'assets/Menu/Food/Hummus/original_hummus.png',
+            imgAlt: 'Hummus',
+            desc: 'Our classic, house-made hummus.',
+        },
+        {
+            cat: 'hummus', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Trio Hummus', price: 8.00, priceDisplay: '€8.00',
+            badge: 'DIP HEAVEN', badgeRotate: '10deg',
+            img: 'assets/Menu/Food/Hummus/trio_hummus.jpeg',
+            imgAlt: 'Hummus Trio',
+            desc: 'Hummus trio: Basil, Beetroot & Spicy.',
+        },
+        {
+            cat: 'falafel', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Falafel', price: 6.00, priceDisplay: '€6.00',
+            badge: 'SERIOUS CRISP', badgeRotate: '8deg',
+            img: 'assets/Menu/Food/Sandwiches/falafel.png',
+            imgAlt: 'Falafel Wrap',
+            desc: 'Falafel, hummus, tahini salad & pickles wrapped in pita bread.',
+        },
+        {
+            cat: 'halloumi', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Halloumi Fries', price: 5.00, priceDisplay: '€5.00',
+            badge: 'DIP HEAVEN', badgeRotate: '8deg',
+            img: 'assets/Menu/Food/Sides/fries.jpeg',
+            imgAlt: 'Halloumi Fries',
+            desc: 'Crispy halloumi cheese served with yogurt dip (5 pcs).',
+        },
+        {
+            cat: 'shawarma', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Panic Attack Beef', price: 16.00, priceDisplay: '€16.00',
+            badge: 'TOTAL CHAOS', badgeRotate: '-5deg',
+            img: 'assets/Menu/Food/Sandwiches/beef_shawerma.jpeg',
+            imgAlt: 'Panic Attack Beef',
+            desc: 'Sliced beef shawarma wrap loaded with fries, hummus, falafel, tahini sauce & garlic aioli.',
+        },
+        {
+            cat: 'shawarma', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Panic Attack Chicken', price: 14.00, priceDisplay: '€14.00',
+            badge: 'TOTAL CHAOS', badgeRotate: '5deg',
+            img: 'assets/Menu/Food/Sandwiches/Shawerma.png',
+            imgAlt: 'Panic Attack Chicken',
+            desc: 'Sliced chicken shawarma wrap loaded with fries, hummus, falafel, tahini sauce & garlic aioli.',
+        },
+        {
+            cat: 'bowls', bg: 'mildPanic', inner: 'white',
+            name: 'Vegan Bowl', price: 13.00, priceDisplay: '€13.00',
+            badge: 'PLANT POWER', badgeRotate: '10deg',
+            img: 'assets/Menu/Food/Bowls/Vegan.jpeg',
+            imgAlt: 'Vegan Bowl',
+            desc: 'Falafel, green salad, beetroot hummus, spicy hummus & basil hummus. Choose your base: rice, fries or salad.',
+        },
+        {
+            cat: 'bowls', bg: 'panicOrange', inner: 'freshPita',
+            name: 'Fried Chicken Bowl', price: 13.00, priceDisplay: '€13.00',
+            badge: 'CRUNCH LOADED', badgeRotate: '8deg',
+            img: 'assets/Menu/Food/Bowls/Fried_Chicken.jpeg',
+            imgAlt: 'Fried Chicken Bowl',
+            desc: 'Crispy chicken tenders (regular or spicy), coleslaw & garlic aioli or sauce of choice.',
+        },
     ];
 
-    // ─────────────────────────────────────────────
-    // BUILD MENU GRID
-    // ─────────────────────────────────────────────
     const bgClasses   = { panicOrange: 'bg-panicOrange', mildPanic: 'bg-mildPanic' };
     const innerClasses = { freshPita: 'bg-freshPita', white: 'bg-white' };
 
     function buildMenuGrid(category) {
-      const grid = document.getElementById('menu-grid');
-      grid.innerHTML = '';
+        const grid = document.getElementById('menu-grid');
+        grid.innerHTML = '';
 
-      menuItems
-        .filter(item => category === 'all' || item.cat === category)
-        .forEach(item => {
-          const div = document.createElement('div');
-          div.className = `menu-item ${item.cat} ${bgClasses[item.bg]} rounded-[32px] p-3 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2`;
+        menuItems
+            .filter(item => category === 'all' || item.cat === category)
+            .forEach(item => {
+                const div = document.createElement('div');
+                div.className = `menu-item ${item.cat} ${bgClasses[item.bg]} rounded-[24px] sm:rounded-[32px] p-2.5 sm:p-4 border-4 border-blackChar retro-shadow-orange transform transition-transform hover:-translate-y-2`;
 
-          const nameEscaped = item.name.replace(/'/g, "\\'");
-          const priceNum = item.price || 0;
-
-          div.innerHTML = `
-            <div class="${innerClasses[item.inner]} rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-              <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-               <img src="${item.img}" alt="${item.imgAlt}"
-     class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white"
-     style="object-position: ${item.objPos || '50% center'}" />
-                <span class="absolute top-0 -right-2 bg-blackChar text-white text-[10px] font-display px-2 py-1 border-2 border-white z-10"
-                      style="transform: rotate(${item.badgeRotate})">${item.badge}</span>
-              </div>
-              <div class="flex-grow text-center sm:text-left space-y-3 flex flex-col justify-between h-full w-full">
-                <div>
-                  <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-2">
-                    <h3 class="text-2xl font-display uppercase leading-tight text-blackChar">${item.name}</h3>
-                    <span class="text-xl font-display text-panicOrange bg-white px-3 py-1 border-2 border-blackChar rotate-[-2deg] inline-block whitespace-nowrap">${item.priceDisplay}</span>
-                  </div>
-                  <p class="text-sm font-medium text-blackChar/80">${item.desc}</p>
-                </div>
-                
-		<div class="mt-4 flex justify-center items-center overflow-hidden h-28">
-  <img src="assets/Menu/Cutlery/wipe-evidence.png" alt="Fork and napkin"
-       class="h-40 object-contain rotate-90" />
-</div>
-
-              </div>
-            </div>
-          `;
-          grid.appendChild(div);
-        });
+                div.innerHTML = `
+                    <div class="${innerClasses[item.inner]} rounded-[16px] sm:rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 relative overflow-hidden">
+                        <div class="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 flex-shrink-0 relative">
+                            <div class="w-full h-full rounded-full bg-blackChar p-2 shadow-[6px_10px_0px_0px_#111110] rotate-[-3deg]">
+                                <div class="w-full h-full rounded-full bg-toastedPita relative overflow-hidden">
+                                    <img src="${item.img}" alt="${item.imgAlt}"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                         class="w-full h-full object-cover rounded-full bg-white absolute inset-0" />
+                                    <div class="hidden absolute inset-0 flex-col items-center justify-center text-center px-3 bg-toastedPita rounded-full">
+                                        <i class="fa-solid fa-camera text-blackChar text-xl sm:text-2xl mb-1 opacity-40"></i>
+                                        <span class="font-display text-[8px] sm:text-[10px] uppercase text-blackChar opacity-50 leading-tight">Photo<br>Coming Soon</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="absolute top-0 -right-1 sm:-right-2 bg-blackChar text-white text-[10px] sm:text-sm font-display px-2 sm:px-3 py-1 border-2 border-white z-10 whitespace-nowrap"
+                                  style="transform: rotate(${item.badgeRotate})">${item.badge}</span>
+                        </div>
+                        <div class="flex-grow text-center sm:text-left space-y-2 sm:space-y-3 flex flex-col justify-between h-full w-full min-w-0">
+                            <div>
+                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 mb-1.5 sm:mb-2">
+                                    <h3 class="text-xl sm:text-2xl font-display uppercase leading-tight text-blackChar">${item.name}</h3>
+                                </div>
+                                <p class="text-sm sm:text-base font-medium text-blackChar">${item.desc}</p>
+                            </div>
+                            <div class="mt-3 sm:mt-4 hidden sm:flex justify-center items-center overflow-hidden h-20 sm:h-28">
+                                <img src="assets/Menu/Cutlery/wipe-evidence.png" alt="Fork and napkin" class="h-32 sm:h-40 object-contain rotate-90" />
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
     }
 
-    // ─────────────────────────────────────────────
-    // FILTER TABS
-    // ─────────────────────────────────────────────
     function filterMenu(category, e) {
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.className = 'tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1';
-      });
-      (e.currentTarget || e.target).className = 'tab-btn px-5 py-2.5 border-2 border-freshPita font-display text-base uppercase bg-panicOrange text-white transition-all transform hover:-translate-y-1';
-      buildMenuGrid(category);
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.className = 'tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-transparent text-freshPita hover:bg-freshPita hover:text-blackChar transition-all transform hover:-translate-y-1';
+        });
+        (e.currentTarget || e.target).className = 'tab-btn px-4 py-2 sm:px-5 sm:py-2.5 border-2 border-freshPita font-display text-sm sm:text-base uppercase bg-panicOrange text-white transition-all transform hover:-translate-y-1';
+        buildMenuGrid(category);
     }
 
-    // ─────────────────────────────────────────────
-    // PANIC LEVEL
-    // ─────────────────────────────────────────────
-    const panicLabel = document.getElementById('panic-level-label');
     function updatePanicLevel(val) {
-      const intensity = parseFloat(val);
-      const root = document.documentElement;
-      root.style.setProperty('--panic-angle', `${(intensity / 100) * 4.5}deg`);
-      root.style.setProperty('--panic-translate-x', `${(intensity / 100) * 6}px`);
-      root.style.setProperty('--panic-translate-y', `${(intensity / 100) * 6}px`);
-      root.style.setProperty('--panic-saturation', `${1 + (intensity / 100) * 0.9}`);
-      const fontSize = 0.85 + (intensity / 100) * 1.15;
-      panicLabel.style.fontSize = `${fontSize}rem`;
-      if (intensity < 15) panicLabel.innerText = 'TOTALLY CHILL';
-      else if (intensity < 40) panicLabel.innerText = 'MILD CRAVING';
-      else if (intensity < 65) panicLabel.innerText = 'ACTIVE PANIC';
-      else if (intensity < 88) panicLabel.innerText = 'SERIOUS PANIC';
-      else panicLabel.innerText = 'UNHINGED CHAOS 🔥';
+        const intensity = parseFloat(val);
+        const root = document.documentElement;
+        root.style.setProperty('--panic-angle', `${(intensity / 100) * 4.5}deg`);
+        root.style.setProperty('--panic-translate-x', `${(intensity / 100) * 6}px`);
+        root.style.setProperty('--panic-translate-y', `${(intensity / 100) * 6}px`);
+        root.style.setProperty('--panic-saturation', `${1 + (intensity / 100) * 0.9}`);
+        const fontSize = 0.8 + (intensity / 100) * 1.0;
+        panicLabel.style.fontSize = `${fontSize}rem`;
+        if (intensity < 15) panicLabel.innerText = 'TOTALLY CHILL';
+        else if (intensity < 40) panicLabel.innerText = 'MILD CRAVING';
+        else if (intensity < 65) panicLabel.innerText = 'ACTIVE PANIC';
+        else if (intensity < 88) panicLabel.innerText = 'SERIOUS PANIC';
+        else panicLabel.innerText = 'UNHINGED CHAOS 🔥';
     }
 
-    // // ─────────────────────────────────────────────
-    // // BASKET
-    // // ─────────────────────────────────────────────
-    // let basket = [];
-    // const basketContainer     = document.getElementById('cravings-basket');
-    // const basketItemsDiv      = document.getElementById('basket-items-container');
-    // const basketTotalSpan     = document.getElementById('basket-total');
-    // const basketBadge         = document.getElementById('basket-badge');
-    // const emptyMsg            = document.getElementById('empty-basket-msg');
-
-    // function toggleBasket() {
-    //   if (basketContainer.classList.contains('hidden')) {
-    //     basketContainer.classList.remove('hidden');
-    //     setTimeout(() => {
-    //       basketContainer.classList.remove('scale-95', 'opacity-0');
-    //       basketContainer.classList.add('scale-100', 'opacity-100');
-    //     }, 10);
-    //   } else {
-    //     basketContainer.classList.remove('scale-100', 'opacity-100');
-    //     basketContainer.classList.add('scale-95', 'opacity-0');
-    //     setTimeout(() => basketContainer.classList.add('hidden'), 300);
-    //   }
-    // }
-
-    // function addToStack(name, price) {
-    //   basket.push({ name, price });
-    //   updateBasketUI();
-    //   showToast(`Added ${name} to stack!`);
-    //   const btn = document.getElementById('basket-toggle-btn');
-    //   btn.classList.add('scale-125');
-    //   setTimeout(() => btn.classList.remove('scale-125'), 200);
-    // }
-
-    // function clearBasket() {
-    //   basket = [];
-    //   updateBasketUI();
-    // }
-
-    // function updateBasketUI() {
-    //   basketItemsDiv.innerHTML = '';
-    //   let total = 0;
-    //   if (basket.length === 0) {
-    //     basketItemsDiv.appendChild(emptyMsg);
-    //     emptyMsg.style.display = 'block';
-    //     basketBadge.classList.add('hidden');
-    //   } else {
-    //     emptyMsg.style.display = 'none';
-    //     basketBadge.classList.remove('hidden');
-    //     basketBadge.innerText = basket.length;
-    //     basket.forEach(item => {
-    //       total += item.price;
-    //       const el = document.createElement('div');
-    //       el.className = 'flex justify-between items-center border-b-2 border-gray-100 pb-2 mb-2 last:border-0 last:mb-0 last:pb-0';
-    //       el.innerHTML = `
-    //         <span class="font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
-    //         <span class="font-sans font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
-    //       `;
-    //       basketItemsDiv.appendChild(el);
-    //     });
-    //   }
-    //   basketTotalSpan.innerText = `€${total.toFixed(2)}`;
-    // }
-
-    // function showToast(msg) {
-    //   const toast = document.createElement('div');
-    //   toast.className = "fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-blackChar text-white px-6 py-3 border-4 border-panicOrange shadow-xl font-display uppercase tracking-wider flex items-center gap-3 transition-all duration-300 translate-y-[-20px] opacity-0 retro-shadow";
-    //   toast.innerHTML = `<i class="fa-solid fa-fire text-panicOrange animate-pulse"></i> <span class="font-display">${msg}</span>`;
-    //   document.body.appendChild(toast);
-    //   setTimeout(() => toast.classList.remove('translate-y-[-20px]', 'opacity-0'), 10);
-    //   setTimeout(() => {
-    //     toast.classList.add('translate-y-[-20px]', 'opacity-0');
-    //     setTimeout(() => toast.remove(), 300);
-    //   }, 2500);
-    // }
-
-    // ─────────────────────────────────────────────
-    // ROULETTE — uses full menuItems list
-    // ─────────────────────────────────────────────
     let currentRouletteSelection = null;
 
     function triggerEmergencyFix() {
-      const idx = Math.floor(Math.random() * menuItems.length);
-      currentRouletteSelection = menuItems[idx];
-      const resultContainer = document.getElementById('roulette-result');
-      resultContainer.classList.add('hidden', 'scale-95', 'opacity-0');
-      setTimeout(() => {
-        document.getElementById('result-title').innerText  = currentRouletteSelection.name;
-        document.getElementById('result-desc').innerText   = currentRouletteSelection.desc;
-        document.getElementById('result-price').innerText  = currentRouletteSelection.priceDisplay;
-        resultContainer.classList.remove('hidden');
+        const idx = Math.floor(Math.random() * menuItems.length);
+        currentRouletteSelection = menuItems[idx];
+        const resultContainer = document.getElementById('roulette-result');
+        resultContainer.classList.add('hidden', 'scale-95', 'opacity-0');
         setTimeout(() => {
-          resultContainer.classList.remove('scale-95', 'opacity-0');
-          resultContainer.classList.add('scale-100', 'opacity-100');
-          confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 }, colors: ['#DC3E18', '#111110', '#EEDEC6'] });
-        }, 50);
-      }, 300);
+            document.getElementById('result-title').innerText  = currentRouletteSelection.name;
+            document.getElementById('result-desc').innerText   = currentRouletteSelection.desc;
+            document.getElementById('result-price').innerText  = currentRouletteSelection.priceDisplay;
+            resultContainer.classList.remove('hidden');
+            setTimeout(() => {
+                resultContainer.classList.remove('scale-95', 'opacity-0');
+                resultContainer.classList.add('scale-100', 'opacity-100');
+                confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 }, colors: ['#DC3E18', '#111110', '#EEDEC6'] });
+            }, 50);
+        }, 300);
     }
 
-    function addRouletteToStack() {
-      if (currentRouletteSelection) {
-        addToStack(currentRouletteSelection.name, currentRouletteSelection.price || 0);
-      }
-    }
-
-    // ─────────────────────────────────────────────
-    // CATERING CALCULATOR
-    // ─────────────────────────────────────────────
     function calculateCatering(size) {
-      document.getElementById('crowd-count').innerText = `${size} PEOPLE`;
-      document.getElementById('cat-chicken').innerText = `${(size * 0.2).toFixed(1)} kg`;
-      document.getElementById('cat-beef').innerText    = `${(size * 0.15).toFixed(1)} kg`;
-      document.getElementById('cat-falafel').innerText = `${Math.ceil(size * 3)} pcs`;
-      document.getElementById('cat-pita').innerText    = `${Math.ceil(size * 1.2)} packs`;
+        document.getElementById('crowd-count').innerText = `${size} PEOPLE`;
+        
+        // Calculate catering sizes dynamically based on sandwiches/wraps (approx ~1.5 wraps per person)
+        const chickenSandwiches = Math.ceil(size * 0.6);
+        const beefSandwiches    = Math.ceil(size * 0.5);
+        const falafelSandwiches = Math.ceil(size * 0.4);
+        const totalWraps        = chickenSandwiches + beefSandwiches + falafelSandwiches;
+
+        // Apply updated counts to the HTML nodes
+        document.getElementById('cat-chicken').innerText = `${chickenSandwiches} pcs`;
+        document.getElementById('cat-beef').innerText    = `${beefSandwiches} pcs`;
+        document.getElementById('cat-falafel').innerText = `${falafelSandwiches} pcs`;
+        document.getElementById('cat-pita').innerText    = `${totalWraps} pcs`;
     }
 
-    // ─────────────────────────────────────────────
-    // SMART SCROLL HEADER
-    // ─────────────────────────────────────────────
+    const panicLabel = document.getElementById('panic-level-label');
     let lastScrollY = window.scrollY;
+    let accumulatedUp = 0;
+    let accumulatedDown = 0;
     const headerWrapper = document.getElementById('header-wrapper');
+
     window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 120) {
-        if (currentScrollY > lastScrollY + 5) {
-          headerWrapper.classList.remove('translate-y-0');
-          headerWrapper.classList.add('-translate-y-full');
-        } else if (currentScrollY < lastScrollY - 5) {
-          headerWrapper.classList.remove('-translate-y-full');
-          headerWrapper.classList.add('translate-y-0');
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+
+        if (currentScrollY <= 120) {
+            headerWrapper.classList.remove('-translate-y-full');
+            headerWrapper.classList.add('translate-y-0');
+            accumulatedUp = 0;
+            accumulatedDown = 0;
+            lastScrollY = currentScrollY;
+            return;
         }
-      } else {
-        headerWrapper.classList.remove('-translate-y-full');
-        headerWrapper.classList.add('translate-y-0');
-      }
-      lastScrollY = currentScrollY;
+
+        if (diff > 0) {
+            accumulatedDown += diff;
+            accumulatedUp = 0;
+            if (accumulatedDown > 10) {
+                headerWrapper.classList.remove('translate-y-0');
+                headerWrapper.classList.add('-translate-y-full');
+                closeMobileMenu();
+            }
+        } else if (diff < 0) {
+            accumulatedUp += Math.abs(diff);
+            accumulatedDown = 0;
+            if (accumulatedUp >= 200) {
+                headerWrapper.classList.remove('-translate-y-full');
+                headerWrapper.classList.add('translate-y-0');
+            }
+        }
+        lastScrollY = currentScrollY;
     });
 
-    // ─────────────────────────────────────────────
-    // INIT
-    // ─────────────────────────────────────────────
+    // Mobile navigation menu toggle
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+    function toggleMobileMenu() {
+        const isOpen = mobileMenuPanel.classList.contains('open');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            mobileMenuPanel.classList.add('open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenuIcon.classList.remove('fa-bars');
+            mobileMenuIcon.classList.add('fa-xmark');
+        }
+    }
+
+    function closeMobileMenu() {
+        mobileMenuPanel.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuIcon.classList.remove('fa-xmark');
+        mobileMenuIcon.classList.add('fa-bars');
+    }
+
+    // Close mobile menu automatically if viewport grows into desktop size
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            closeMobileMenu();
+        }
+    });
+
     window.onload = () => {
-      buildMenuGrid('all');
-      updateBasketUI();
-      updatePanicLevel(50);
+        buildMenuGrid('all');
+        updatePanicLevel(5);
+        calculateCatering(10); // Run initial calculation on load
     };
     </script>
 </body>

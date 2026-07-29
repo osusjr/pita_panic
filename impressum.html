@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="robots" content="noindex, follow">
+    <title>PITA PANIC | Impressum</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': '400px',
+                    },
+                    colors: {
+                        panicOrange: '#DC3E18',
+                        mildPanic: '#E05828',
+                        toastedPita: '#EEDEC6',
+                        freshPita: '#EFEAE4',
+                        blackChar: '#111110',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['FolkiesVantageSans', 'Lilita One', 'Impact', 'Arial Black', 'sans-serif'],
+                        script: ['FolkiesVantageScript', 'Satisfy', 'Brush Script MT', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'FolkiesVantageSans';
+            src: url('./assets/Font Files/FolkiesVantageSans/Web-PS/Folkies Vantage Sans.woff2') format('woff2'),
+                 url('./assets/Font Files/FolkiesVantageSans/OpenType-TT/Folkies Vantage Sans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url('./assets/Font Files/Poppins/Poppins-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #EFEAE4;
+            color: #111110;
+        }
+
+        img { max-width: 100%; height: auto; }
+
+        .retro-shadow {
+            box-shadow: 4px 4px 0px 0px #111110;
+            transition: all 0.2s ease-in-out;
+        }
+        .retro-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #111110;
+        }
+        @media (min-width: 640px) {
+            .retro-shadow { box-shadow: 6px 6px 0px 0px #111110; }
+            .retro-shadow:hover { box-shadow: 8px 8px 0px 0px #111110; }
+        }
+
+        /* Mobile menu panel base state (JS toggles 'open') */
+        #mobile-menu-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        #mobile-menu-panel.open {
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Sticky Header -->
+    <div class="sticky top-0 z-50 w-full shadow-xl">
+        <nav class="bg-blackChar text-freshPita border-b-4 border-panicOrange relative z-20">
+            <div class="max-w-7xl mx-auto flex items-center justify-between h-16 sm:h-20 lg:h-24 px-3 sm:px-6 lg:px-8">
+
+                <a href="index.html" class="flex items-center gap-3 group h-full py-2 sm:py-3 min-w-0">
+                    <div class="h-full hidden sm:block">
+                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain filter brightness-110" style="height: 68px; max-width: none;" />
+                    </div>
+                    <span class="block sm:hidden font-display text-xl tracking-tight text-freshPita group-hover:text-panicOrange transition-colors uppercase truncate">PITA PANIC</span>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-6 xl:gap-10 font-bold uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Home</a>
+                    <a href="Menu.html" target="_blank" rel="noopener" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Menu</a>
+                    <a href="index.html#catering" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Catering</a>
+
+                    <a href="index.html#franchise" class="bg-panicOrange text-white font-display text-lg px-5 py-2.5 border-2 border-white hover:bg-white hover:text-blackChar hover:border-blackChar transition-all shadow-[4px_4px_0px_0px_#EFEAE4] active:translate-y-0.5 uppercase tracking-wide">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile hamburger button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-panel"
+                        class="lg:hidden flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 border-2 border-freshPita text-freshPita hover:text-panicOrange hover:border-panicOrange transition-colors shrink-0">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg sm:text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Panel -->
+            <div id="mobile-menu-panel" class="lg:hidden flex flex-col bg-blackChar border-t-0 border-panicOrange">
+                <a href="index.html" class="block px-6 py-4 border-b border-freshPita/20 border-t-4 border-t-panicOrange font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Home</a>
+                <a href="Menu.html" target="_blank" rel="noopener" class="block px-6 py-4 border-b border-freshPita/20 font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Menu</a>
+                <a href="index.html#catering" class="block px-6 py-4 border-b border-freshPita/20 font-display text-lg uppercase hover:text-panicOrange hover:bg-white/5 transition-colors">Catering</a>
+                <a href="index.html#franchise" class="block px-6 py-4 font-display text-lg uppercase bg-panicOrange text-white hover:bg-white hover:text-blackChar transition-colors text-center">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Impressum Content -->
+    <main class="py-14 sm:py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+            <div class="relative mb-10 sm:mb-14 text-center">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display text-blackChar uppercase tracking-tighter leading-none">
+                    IMPRES<span class="text-panicOrange">SUM</span>
+                </h1>
+                <p class="font-sans font-medium text-sm sm:text-base mt-4 opacity-70">Angaben gemäß § 5 DDG (Legal Notice)</p>
+            </div>
+
+            <div class="bg-white border-4 border-blackChar p-6 sm:p-10 retro-shadow relative">
+                <div class="absolute -top-5 left-4 sm:left-8 bg-panicOrange text-white px-4 sm:px-6 py-1.5 sm:py-2 border-4 border-blackChar font-display text-sm sm:text-lg uppercase rotate-[-3deg]">
+                    THE LEGAL STUFF
+                </div>
+
+                <div class="space-y-8 sm:space-y-10 mt-6 sm:mt-4 font-sans text-sm sm:text-base leading-relaxed">
+
+                    <!-- Anbieter -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Anbieter</h2>
+                        <p class="font-semibold text-lg sm:text-xl">Amanah Foods GmbH</p>
+                        <p>Gartenstraße 30<br>72764 Reutlingen<br>Deutschland</p>
+                        <p class="mt-3"><span class="font-semibold">Vertreten durch:</span> Meryem Sert</p>
+                    </section>
+
+                    <!-- Kontakt -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Kontakt</h2>
+                        <p class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-panicOrange shrink-0"></i>
+                            <span><span class="font-semibold">Telefon:</span> <a href="tel:+4917662096313" class="hover:text-panicOrange transition-colors">+49 176 62 09 63 13</a></span>
+                        </p>
+                        <p class="flex items-center gap-3 mt-2">
+                            <i class="fa-solid fa-envelope text-panicOrange shrink-0"></i>
+                            <span><span class="font-semibold">E-Mail:</span> <a href="mailto:info@pita-panic.com" class="hover:text-panicOrange transition-colors break-all">info@pita-panic.com</a></span>
+                        </p>
+                    </section>
+
+                    <!-- Registereintrag -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Registereintrag</h2>
+                        <p>Eintragung im Handelsregister.</p>
+                        <p><span class="font-semibold">Registergericht:</span> Amtsgericht Stuttgart</p>
+                        <p><span class="font-semibold">Registernummer:</span> HRB 805446</p>
+                    </section>
+
+                    <!-- USt-ID -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Umsatzsteuer-ID</h2>
+                        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:</p>
+                        <p class="font-semibold">DE463342153</p>
+                    </section>
+
+                    <!-- Verantwortlich für den Inhalt -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+                        <p>Meryem Sert<br>Gartenstraße 30<br>72764 Reutlingen</p>
+                    </section>
+
+                    <!-- Streitbeilegung -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Verbraucherstreitbeilegung</h2>
+                        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    </section>
+
+                    <!-- Haftung für Inhalte -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Haftung für Inhalte</h2>
+                        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+                    </section>
+
+                    <!-- Haftung für Links -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Haftung für Links</h2>
+                        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                    </section>
+
+                    <!-- Urheberrecht -->
+                    <section>
+                        <h2 class="font-display text-xl sm:text-2xl text-panicOrange uppercase tracking-wider mb-3">Urheberrecht</h2>
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="mt-10 sm:mt-12 text-center">
+                <a href="index.html" class="inline-block bg-blackChar text-freshPita font-display text-lg sm:text-xl px-8 py-3.5 border-4 border-blackChar hover:bg-panicOrange hover:text-white transition-all shadow-[6px_6px_0px_0px_#DC3E18] active:translate-y-1 uppercase tracking-wide rotate-[-1deg] hover:rotate-0">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to the Panic
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blackChar text-freshPita pt-14 sm:pt-20 pb-8 sm:pb-10 border-t-8 border-panicOrange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-12 border-b-4 border-freshPita border-opacity-20 pb-10 sm:pb-12">
+
+            <div class="md:col-span-5 space-y-5 sm:space-y-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 overflow-hidden border-4 border-panicOrange rounded-xl rotate-[-6deg] transition-transform duration-200 hover:rotate-0 shrink-0">
+                        <img src="assets/Logos/Pita_Panic_P_Orange.jpg" alt="Pita Panic Emblem" class="w-full h-full object-cover">
+                    </div>
+                    <div class="h-12 sm:h-14">
+                        <img src="assets/Logos/Pita_Panic_Logo_White_On_Black.jpg" alt="Pita Panic Wordmark" class="h-full object-contain" style="max-width: none;">
+                    </div>
+                </div>
+                <p class="text-sm sm:text-base font-medium opacity-80 leading-relaxed max-w-sm font-sans">
+                    Drippy shawerma & fries done properly. Highly interactive, seriously stacked, and unapologetically bold Middle Eastern food brand based in Ghent.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/pita.panic?igsh=MTlvYm4zZXJxamt4cQ==" target="_blank" rel="noopener" class="w-11 h-11 sm:w-12 sm:h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-lg sm:text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/DdvXLUEoA3vmA32i7?g_st=aw" target="_blank" rel="noopener" class="w-11 h-11 sm:w-12 sm:h-12 bg-freshPita text-blackChar rounded-none border-2 border-freshPita flex items-center justify-center text-lg sm:text-xl hover:bg-panicOrange hover:text-white hover:border-panicOrange transition-colors retro-shadow">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 space-y-5 sm:space-y-6">
+                <h4 class="font-display text-panicOrange text-xl sm:text-2xl uppercase tracking-wider">CRAVING HOURS</h4>
+                <ul class="text-sm sm:text-base space-y-3 font-medium font-sans">
+                    <li class="flex justify-between pb-2 gap-3"><span>Every Day</span> <span class="text-panicOrange font-bold whitespace-nowrap">11:00 – 22:00</span></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-5 sm:space-y-6">
+                <h4 class="font-display text-panicOrange text-xl sm:text-2xl uppercase tracking-wider">PANIC CENTER</h4>
+                <div class="space-y-3 sm:space-y-4 font-medium font-sans">
+                    <p class="flex items-start gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-location-dot text-panicOrange text-lg sm:text-xl mt-1 shrink-0"></i>
+                        <span>Marktstraße,<br>70372, Stuttgart Bad-Cannstatt, Germany</span>
+                    </p>
+                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-envelope text-panicOrange text-lg sm:text-xl shrink-0"></i>
+                        <span class="break-all">info@pita-panic.com</span>
+                    </p>
+                    <p class="flex items-center gap-3 bg-white bg-opacity-10 p-3 sm:p-4 border-2 border-transparent hover:border-panicOrange transition-colors font-sans text-sm sm:text-base">
+                        <i class="fa-solid fa-phone text-panicOrange text-lg sm:text-xl shrink-0"></i>
+                        <span>+49 176 62 09 63 13</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-bold opacity-70 gap-4 sm:gap-6 font-sans text-center">
+            <p>© 2026 PITA PANIC. ALL RIGHTS RESERVED. <span class="mx-1">|</span> <a href="impressum.html" class="underline underline-offset-4 hover:text-panicOrange transition-colors">IMPRESSUM</a></p>
+            <div class="bg-panicOrange text-white px-4 sm:px-6 py-2 border-2 border-white font-display text-sm sm:text-lg uppercase tracking-wide transform rotate-[2deg] hover:rotate-0 transition-transform">
+                THIS SMELLS LIKE A GOOD DECISION.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation menu toggle
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenuPanel.classList.contains('open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                mobileMenuPanel.classList.add('open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-xmark');
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.remove('open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuIcon.classList.remove('fa-xmark');
+            mobileMenuIcon.classList.add('fa-bars');
+        }
+
+        // Close mobile menu automatically if viewport grows into desktop size
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
